@@ -1,0 +1,5 @@
+services:
+  github_user:
+    class: Drupal\amazee_test\GithubUserService
+    arguments: []
+

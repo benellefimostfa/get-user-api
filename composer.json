@@ -1,0 +1,14 @@
+{
+  "name": "drupal/amazee_test",
+  "type": "drupal-module",
+  "description": "Ben Ellefi mostfa Amazee labs test",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/amazee_test",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/amazee_test",
+    "source": "http://cgit.drupalcode.org/amazee_test"
+  },
+  "require": { }
+}

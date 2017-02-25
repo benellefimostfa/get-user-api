@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Contains amazee_test.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function amazee_test_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the amazee_test module.
+    case 'help.page.amazee_test':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Ben Ellefi mostfa Amazee labs test') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function amazee_test_theme($existing, $type, $theme, $path) {
+
+  $variables = [
+    'github_user' => [
+      'variables' => [
+        'content' => [],
+      ],
+    ],
+  ];
+
+  return $variables;
+}

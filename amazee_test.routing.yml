@@ -1,0 +1,18 @@
+
+amazee_test.github_user_api_controller_get_user:
+  path: '/api/get-github-user'
+  defaults:
+    _controller: '\Drupal\amazee_test\Controller\GithubUserApiController::getUser'
+  requirements:
+    _access: 'TRUE'
+
+amazee_test.github_account_form:
+  path: '/admin/config/amazee_test/githubaccount'
+  defaults:
+    _form: '\Drupal\amazee_test\Form\GithubAccountForm'
+    _title: 'GithubAccountForm'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE
+
