@@ -17,3 +17,9 @@ Github user block:
 
 Go to the block layouts page and add the "Github account block"
 on any region you want.
+
+Github user field:
+----------------------
+
+Add a new file of type 'Github user' and fill inputs with account login
+ and repo.
