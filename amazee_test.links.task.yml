@@ -1,0 +1,81 @@
+amazee_test.github_users:
+  route_name : amazee_test.github_user_api_controller_get_user
+  title: User
+  base_route: amazee_test.github_user_api_controller_get_user
+  weight: 10
+
+amazee_test.issues:
+  route_name: amazee_test.github_api_controller_get_issues
+  title: Issues
+  base_route: amazee_test.github_user_api_controller_get_user
+  weight: 20
+  route_parameters:
+      language:  'PHP'
+
+amazee_test.issues_php:
+  route_name: amazee_test.github_api_controller_get_issues
+  title: php
+  base_route: amazee_test.github_user_api_controller_get_user
+  parent_id: amazee_test.issues
+  weight: 20
+  route_parameters:
+      language:  'PHP'
+
+amazee_test.issues_javascript:
+  route_name: amazee_test.github_api_controller_get_issues
+  title: javascript
+  base_route: amazee_test.github_user_api_controller_get_user
+  parent_id: amazee_test.issues
+  weight: 20
+  route_parameters:
+      language:  'JavaScript'
+
+amazee_test.issues_ruby:
+  route_name: amazee_test.github_api_controller_get_issues
+  title: ruby
+  base_route: amazee_test.github_user_api_controller_get_user
+  parent_id: amazee_test.issues
+  weight: 20
+  route_parameters:
+      language:  'Ruby'
+
+amazee_test.repos:
+  route_name: amazee_test.github_api_controller_get_repos
+  title: Repos
+  base_route: amazee_test.github_user_api_controller_get_user
+  weight: 20
+  route_parameters:
+      language:  'PHP'
+
+amazee_test.repos_php:
+  route_name: amazee_test.github_api_controller_get_repos
+  title: php
+  base_route: amazee_test.github_user_api_controller_get_user
+  parent_id: amazee_test.repos
+  weight: 20
+  route_parameters:
+      language:  'PHP'
+
+amazee_test.repos_javascript:
+  route_name: amazee_test.github_api_controller_get_repos
+  title: javascript
+  base_route: amazee_test.github_user_api_controller_get_user
+  parent_id: amazee_test.repos
+  weight: 20
+  route_parameters:
+      language:  'JavaScript'
+
+amazee_test.repos_ruby:
+  route_name: amazee_test.github_api_controller_get_repos
+  title: ruby
+  base_route: amazee_test.github_user_api_controller_get_user
+  parent_id: amazee_test.repos
+  weight: 20
+  route_parameters:
+      language:  'Ruby'
+
+amazee_test.projects:
+  route_name: amazee_test.github_api_controller_get_projects
+  title: Hottest projects reports
+  base_route: amazee_test.github_user_api_controller_get_user
+  weight: 20

@@ -1,5 +1,4 @@
 services:
-  github_user:
-    class: Drupal\amazee_test\GithubUserService
+  github_api:
+    class: Drupal\amazee_test\GithubApiService
     arguments: []
-

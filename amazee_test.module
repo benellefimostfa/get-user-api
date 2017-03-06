@@ -34,6 +34,21 @@ function amazee_test_theme($existing, $type, $theme, $path) {
         'content' => [],
       ],
     ],
+    'github_issues' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
+    'github_repos' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
+    'github_projects' => [
+      'variables' => [
+        'items' => [],
+      ],
+    ],
   ];
 
   return $variables;

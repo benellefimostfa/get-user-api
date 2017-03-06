@@ -1,0 +1,50 @@
+<table>
+  <tr>
+    <th>General info</th>
+    <th>Watchers count</th>
+    <th>Forks</th>
+    <th>Wiki</th>
+    <th>Has downloads</th>
+    <th>Has Issues</th>
+    <th>Row total</th>
+  </tr>
+  {% for item in items %}
+    {% set row_count = 0 %}
+    <tr>
+      <td>
+        {{ item.name }},
+        {{ item.stargazers_count }},
+        {{ item.language }}
+      </td>
+      <td>
+        {{ item.watchers_count }}
+        {% set row_count = row_count + item.watchers_count %}
+      </td>
+      <td>
+        {{ item.forks }}
+        {% set row_count = row_count + item.forks %}
+      </td>
+      <td>
+        {% set wiki = item.has_wiki ? '50' : '0' %}
+        {{ wiki }}
+        {% set row_count = row_count + wiki %}
+
+      </td>
+      <td>
+        {% set download = item.has_downloads ? '100' : '0' %}
+        {{ download }}
+        {% set row_count = row_count + download %}
+
+      </td>
+      <td>
+        {% set issues = item.has_issues ? '100' : '0' %}
+        {{ issues }}
+        {% set row_count = row_count + issues %}
+      </td>
+      <td>
+        {{ row_count }} USD
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+

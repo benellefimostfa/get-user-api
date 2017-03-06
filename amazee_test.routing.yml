@@ -2,7 +2,32 @@
 amazee_test.github_user_api_controller_get_user:
   path: '/api/get-github-user'
   defaults:
-    _controller: '\Drupal\amazee_test\Controller\GithubUserApiController::getUser'
+    _controller: '\Drupal\amazee_test\Controller\GithubApiController::getUser'
+    _title: 'Github User'
+  requirements:
+    _access: 'TRUE'
+
+amazee_test.github_api_controller_get_issues:
+  path: '/api/github-issues/{language}'
+  defaults:
+    _controller: '\Drupal\amazee_test\Controller\GithubApiController::getIssues'
+    _title: 'Github Issues'
+  requirements:
+    _access: 'TRUE'
+
+amazee_test.github_api_controller_get_repos:
+  path: '/api/github-repos/{language}'
+  defaults:
+    _controller: '\Drupal\amazee_test\Controller\GithubApiController::getRepos'
+    _title: 'Github Repos'
+  requirements:
+    _access: 'TRUE'
+
+amazee_test.github_api_controller_get_projects:
+  path: '/api/github-hot-projects'
+  defaults:
+    _controller: '\Drupal\amazee_test\Controller\GithubApiController::getProjects'
+    _title: 'Github hottest projects reports'
   requirements:
     _access: 'TRUE'
 

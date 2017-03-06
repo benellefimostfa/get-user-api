@@ -5,7 +5,7 @@ namespace Drupal\amazee_test\Plugin\Block;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\amazee_test\GithubUserService;
+use Drupal\amazee_test\GithubApiService;
 
 /**
  * Provides a 'GithubAccountBlock' block.
@@ -18,9 +18,9 @@ use Drupal\amazee_test\GithubUserService;
 class GithubAccountBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
-   * Drupal\amazee_test\GithubUserService definition.
+   * Drupal\amazee_test\GithubApiService definition.
    *
-   * @var Drupal\amazee_test\GithubUserService
+   * @var Drupal\amazee_test\GithubApiService
    */
   protected $githubUser;
 
@@ -38,7 +38,7 @@ class GithubAccountBlock extends BlockBase implements ContainerFactoryPluginInte
     array $configuration,
     $plugin_id,
     $plugin_definition,
-    GithubUserService $githubUser
+    GithubApiService $githubUser
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->githubUser = $githubUser;
@@ -52,7 +52,7 @@ class GithubAccountBlock extends BlockBase implements ContainerFactoryPluginInte
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('github_user')
+      $container->get('github_api')
     );
   }
 

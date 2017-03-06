@@ -1,0 +1,11 @@
+{% for item in items %}
+  <div>
+    <p>{{ item.name }}</p>
+    <p>by: {{ item.owner.login }}</p>
+    <p>
+      <img src="{{ item.owner.avatar_url }}" height="100px" width="100px">
+    </p>
+    <p>Stargazers count: {{ item.stargazers_count }}</p>
+    <p><a href="{{ item.html_url }}" target="_blank">View on github</a></p>
+  </div>
+{% endfor %}
