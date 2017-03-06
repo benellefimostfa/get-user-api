@@ -6,8 +6,9 @@
     <th>Wiki</th>
     <th>Has downloads</th>
     <th>Has Issues</th>
-    <th>Row total</th>
+    <th>Total</th>
   </tr>
+  {% set global_count = 0 %}
   {% for item in items %}
     {% set row_count = 0 %}
     <tr>
@@ -45,6 +46,21 @@
         {{ row_count }} USD
       </td>
     </tr>
+    {% set global_count = global_count + row_count %}
   {% endfor %}
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <p>{{ global_count }} USD</p>
+      <p>{{ global_count * currencies.GBP }} GBP</p>
+      <p>{{ global_count * currencies.EUR }} EUR</p>
+      <p>{{ global_count * currencies.CHF }} CHF</p>
+    </td>
+  </tr>
 </table>
 

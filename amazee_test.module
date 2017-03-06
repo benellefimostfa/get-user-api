@@ -47,6 +47,7 @@ function amazee_test_theme($existing, $type, $theme, $path) {
     'github_projects' => [
       'variables' => [
         'items' => [],
+        'currencies' => [],
       ],
     ],
   ];

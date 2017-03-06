@@ -52,13 +52,12 @@ class GithubApiService {
    *
    * @return mixed|string
    */
-  protected function getRequest($url, $options = NULL) {
+  public function getRequest($url, $options = NULL) {
     $client = \Drupal::httpClient();
     $request = $client->get($url, $options);
     $content = $request->getBody()->getContents();
     $content = json_decode($content);
     return $content;
-
   }
 
   /**
@@ -67,7 +66,7 @@ class GithubApiService {
    * @param $sort
    * @return string
    */
-  protected function getQuery($type, $language, $sort) {
+  public function getQuery($type, $language, $sort) {
     $weekback = date('Y-m-d', strtotime('-1 week'));
     $query =
       'q=is:' . $type . '
@@ -81,7 +80,7 @@ class GithubApiService {
    * @param $type
    * @return string
    */
-  protected function getUrl($type) {
+  public function getUrl($type) {
     $url = 'https://api.github.com/search/' . $type;
     return $url;
   }

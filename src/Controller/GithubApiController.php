@@ -89,11 +89,27 @@ class GithubApiController extends ControllerBase {
     $content = (array) $this->githubApi->getRepos('all');
     // Get first 10 items.
     $items = array_slice($content['items'], 0, 10, TRUE);
+    $currencies = $this->getCurrencies();
 
     return array(
       '#theme' => 'github_projects',
       '#items' => $items,
+      '#currencies' => $currencies,
     );
   }
 
+  /**
+   * @return \Drupal\Core\Config\Config
+   */
+  public function getCurrencies() {
+    $url =
+      'http://www.apilayer.net/api/live?access_key=8ac159821a62e58b7ef1a670063a0f95';
+
+    $content = (array) $this->githubApi->getRequest($url);
+    $content = (array) $content['quotes'];
+    $currencies['GBP'] = $content['USDGBP'];
+    $currencies['EUR'] = $content['USDEUR'];
+    $currencies['CHF'] = $content['USDCHF'];
+    return $currencies;
+  }
 }
